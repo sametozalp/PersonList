@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "368393094811",
+    "project_id": "personlist-c928d",
+    "storage_bucket": "personlist-c928d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368393094811:android:25703a2c48e7fc8204a83e",
+        "android_client_info": {
+          "package_name": "com.ozalp.personlist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "368393094811-9mlnnchtv63dvpsfso1php1g91riunkn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-YIewP5M-Nisi315q5h2PNYpsXaTZ5-I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "368393094811-9mlnnchtv63dvpsfso1php1g91riunkn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
