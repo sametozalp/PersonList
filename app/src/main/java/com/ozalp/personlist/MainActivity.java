@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.ozalp.instagram.R;
+import com.ozalp.instagram.databinding.ActivityMainBinding;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,11 +25,12 @@ public class MainActivity extends AppCompatActivity {
     TextView nameText;
     TextView surnameText;
     FirebaseFirestore firestore;
-
+    ActivityMainBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         init();
 }
 
@@ -49,8 +51,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init(){
-        nameText = findViewById(R.id.nameText);
-        surnameText = findViewById(R.id.surnameText);
+
+        nameText = binding.nameText;
+        surnameText = binding.surnameText;
         firestore = FirebaseFirestore.getInstance();
     }
 
