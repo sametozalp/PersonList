@@ -7,7 +7,7 @@
         android:id="@+id/row"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="23dp"
-        android:textStyle="bold"
-        android:padding="7dp"></TextView>
+        android:padding="7dp"
+        android:textSize="16dp"
+        android:textStyle="italic"></TextView>
 </LinearLayout>

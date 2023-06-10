@@ -28,9 +28,10 @@ public class RecycleView extends AppCompatActivity {
 
     View recyclerView;
     FirebaseFirestore firestore;
-    List list;
+    ArrayList<String> list;
     LAdapter lAdapter;
     ActivityRecycleViewBinding binding;
+
 
 
     @Override
@@ -43,21 +44,21 @@ public class RecycleView extends AppCompatActivity {
         list = new ArrayList();
         getData();
 
-        binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        lAdapter = new LAdapter(list);
-        binding.recyclerView.setAdapter(lAdapter);
     }
 
     public void getData(){
         firestore.collection("People").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                Map<String, Object> data = null;
                 if (!queryDocumentSnapshots.isEmpty()){
-                    for (DocumentSnapshot document : queryDocumentSnapshots) {
-                        data = document.getData();
-                        System.out.println(data);
+                    String a;
+                    for(int i = 0 ; i<queryDocumentSnapshots.size() ; i++){
+                        a = i+1 +". "+(String) queryDocumentSnapshots.getDocuments().get(i).getData().get("fullname");
+                        list.add(a);
                     }
+                    binding.recyclerView.setLayoutManager(new LinearLayoutManager(RecycleView.this));
+                    lAdapter = new LAdapter(list);
+                    binding.recyclerView.setAdapter(lAdapter);
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {

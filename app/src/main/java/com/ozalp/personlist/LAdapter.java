@@ -8,16 +8,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.ozalp.instagram.R;
 import com.ozalp.instagram.databinding.RowBinding;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class LAdapter extends RecyclerView.Adapter<LAdapter.Holder> {
 
-    List list = new ArrayList();
-    public LAdapter(List list){
+    ArrayList<String> list;
+    public LAdapter (ArrayList<String> list){
         this.list = list;
     }
 
@@ -30,7 +32,8 @@ public class LAdapter extends RecyclerView.Adapter<LAdapter.Holder> {
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
-        holder.rowBinding.row.setText(list.get(position).toString());
+        System.out.println(list);
+        holder.rowBinding.row.setText(list.get(position));
     }
 
     @Override
@@ -39,7 +42,6 @@ public class LAdapter extends RecyclerView.Adapter<LAdapter.Holder> {
     }
 
     public class Holder extends RecyclerView.ViewHolder {
-
         RowBinding rowBinding;
         public Holder(@NonNull RowBinding rowBinding) {
             super(rowBinding.getRoot());
